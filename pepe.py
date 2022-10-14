@@ -116,9 +116,9 @@ while True:
                 response = requests.get(url, stream=True)
 
                 if nsfw:
-                    foiul_name = f'{IM_DIR}SPOILER_{title}.{url.split(".")[-1]}'
+                    foiul_name = f'{IM_DIR}SPOILER_{title.replace("/", "̷")}.{url.split(".")[-1]}'
                 else:
-                    foiul_name = f'{IM_DIR}{title}.{url.split(".")[-1]}'
+                    foiul_name = f'{IM_DIR}{title.replace("/", "̷")}.{url.split(".")[-1]}'
 
                 with open(foiul_name, 'wb') as im:
                     shutil.copyfileobj(response.raw, im)
